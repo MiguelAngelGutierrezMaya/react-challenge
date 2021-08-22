@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const ToggleDrawer = () => {
+export const ToggleDrawer = ({ test = false }) => {
 
     /**
      * Styles
@@ -107,7 +107,7 @@ export const ToggleDrawer = () => {
         </div >
     );
 
-    return auth && (
+    return (auth || test) && (
         <>
             <IconButton onClick={() => toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                 <MenuIcon />
